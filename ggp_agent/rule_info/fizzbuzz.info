@@ -1,0 +1,5 @@
+LEGAL=legal_say/2
+DOES=does_say/2
+NEXT=next_count/1;next_success/1
+INIT=init_count/1;init_success/1
+ROLE=role/1

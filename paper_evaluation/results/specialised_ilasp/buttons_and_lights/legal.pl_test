@@ -1,0 +1,46 @@
+input(robot, a).
+input(robot, b).
+input(robot, c).
+role(robot).
+successor(1, 2).
+successor(2, 3).
+successor(3, 4).
+successor(4, 5).
+successor(5, 6).
+successor(6, 7).
+% example
+true(7).
+true(p).
+true(r).
+% types
+prop(
+
+p).
+prop( q).
+prop( r).
+prop( 1).
+prop( 2).
+prop( 3).
+prop( 4).
+prop( 5).
+prop( 6).
+prop( 7).
+agent(
+
+robot).
+action(
+
+a).
+action( b).
+action( c).
+int(
+
+0).
+int( 100).
+% hypothesis
+
+
+
+legal(V0, V1) :- agent(V0), action(V1).
+
+

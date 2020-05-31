@@ -1,0 +1,40 @@
+beats(paper, stone).
+beats(scissors, paper).
+beats(stone, scissors).
+player(p1).
+player(p2).
+succ(0, 1).
+succ(1, 2).
+succ(2, 3).
+% example
+does(p1, scissors).
+does(p2, stone).
+true_score(p1, 1).
+true_score(p2, 0).
+true_step(1).
+% types
+int(
+
+0).
+int( 1).
+int( 2).
+int( 3).
+agent(
+
+p1).
+agent( p2).
+action(
+
+scissors).
+action( paper).
+action( stone).
+% hypothesis
+
+
+
+next_score(V0, V1) :- succ(V3, V1), beats(V8, V6), true_score(V0, V3), does(V5, V6), does(V0, V8), agent(V0), int(V1), int(V3), agent(V5), action(V6), action(V8).
+next_score(V0, V1) :- true_score(V0, V1), does(V5, V7), does(V0, V7), V0 = p1, V5 = p2, agent(V0), int(V1), agent(V5), action(V7).
+next_score(V0, V1) :- beats(V7, V8), true_score(V0, V1), does(V0, V8), does(V5, V7), agent(V0), int(V1), agent(V5), action(V7), action(V8).
+next_score(V0, V1) :- true_score(V0, V1), does(V0, V8), does(V5, V8), V0 = p2, V5 = p1, agent(V0), int(V1), agent(V5), action(V8).
+
+

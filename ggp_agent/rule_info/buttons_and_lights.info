@@ -1,0 +1,5 @@
+DOES=does/2
+LEGAL=legal/2
+NEXT=next/1
+INIT=init/1
+ROLE=role/1

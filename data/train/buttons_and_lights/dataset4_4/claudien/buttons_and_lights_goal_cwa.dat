@@ -1,0 +1,258 @@
+% === CORES ===
+goal(robot,100).
+goal(robot,0).
+% === BACKGROUND ===
+base(p).
+base(q).
+base(r).
+base(1).
+base(2).
+base(3).
+base(4).
+base(5).
+base(6).
+base(7).
+init(1).
+role(robot).
+input(robot,a).
+input(robot,b).
+input(robot,c).
+successor(1,2).
+successor(2,3).
+successor(3,4).
+successor(4,5).
+successor(5,6).
+successor(6,7).
+not_true(A) :- \+ true(A).
+% === MODES ===
+\+true(c).
+\+not_true(c).
+% === TYPES === 
+not_true(prop).
+true(prop).
+next(prop).
+legal(agent,action).
+input(agent,action).
+does(agent,action).
+goal(agent,int).
+role(agent).
+successor(prop,prop).
+% === CONSTANTS ===
+prop(p).
+prop(q).
+prop(r).
+prop(1).
+prop(2).
+prop(3).
+prop(4).
+prop(5).
+prop(6).
+prop(7).
+agent(robot).
+action(a).
+action(b).
+action(c).
+int(0).
+int(100).
+% =========
+true(6).
+goal(robot,0).
+% =========
+true(q).
+true(4).
+goal(robot,0).
+% =========
+true(q).
+true(5).
+goal(robot,0).
+% =========
+true(r).
+true(7).
+goal(robot,0).
+% =========
+true(p).
+true(5).
+true(r).
+goal(robot,0).
+% =========
+true(q).
+true(p).
+true(7).
+goal(robot,0).
+% =========
+true(q).
+true(3).
+goal(robot,0).
+% =========
+true(3).
+goal(robot,0).
+% =========
+true(q).
+true(6).
+goal(robot,0).
+% =========
+true(q).
+true(r).
+true(7).
+goal(robot,0).
+% =========
+true(6).
+true(p).
+true(r).
+goal(robot,0).
+% =========
+true(4).
+true(r).
+goal(robot,0).
+% =========
+true(p).
+true(7).
+true(r).
+goal(robot,0).
+% =========
+true(2).
+true(p).
+goal(robot,0).
+% =========
+true(p).
+true(3).
+goal(robot,0).
+% =========
+true(6).
+true(p).
+goal(robot,0).
+% =========
+true(q).
+true(p).
+true(7).
+true(r).
+goal(robot,100).
+% =========
+true(2).
+goal(robot,0).
+% =========
+true(7).
+goal(robot,0).
+% =========
+true(q).
+true(r).
+true(6).
+goal(robot,0).
+% =========
+true(q).
+true(p).
+true(6).
+goal(robot,0).
+% =========
+true(5).
+goal(robot,0).
+% =========
+true(4).
+true(p).
+goal(robot,0).
+% =========
+true(q).
+true(4).
+true(p).
+goal(robot,0).
+% =========!
+true(6).
+goal(robot, 100).
+% =========!
+true(q).
+true(4).
+goal(robot, 100).
+% =========!
+true(q).
+true(5).
+goal(robot, 100).
+% =========!
+true(r).
+true(7).
+goal(robot, 100).
+% =========!
+true(p).
+true(5).
+true(r).
+goal(robot, 100).
+% =========!
+true(q).
+true(p).
+true(7).
+goal(robot, 100).
+% =========!
+true(q).
+true(3).
+goal(robot, 100).
+% =========!
+true(3).
+goal(robot, 100).
+% =========!
+true(q).
+true(6).
+goal(robot, 100).
+% =========!
+true(q).
+true(r).
+true(7).
+goal(robot, 100).
+% =========!
+true(6).
+true(p).
+true(r).
+goal(robot, 100).
+% =========!
+true(4).
+true(r).
+goal(robot, 100).
+% =========!
+true(p).
+true(7).
+true(r).
+goal(robot, 100).
+% =========!
+true(2).
+true(p).
+goal(robot, 100).
+% =========!
+true(p).
+true(3).
+goal(robot, 100).
+% =========!
+true(6).
+true(p).
+goal(robot, 100).
+% =========!
+true(q).
+true(p).
+true(7).
+true(r).
+goal(robot, 0).
+% =========!
+true(2).
+goal(robot, 100).
+% =========!
+true(7).
+goal(robot, 100).
+% =========!
+true(q).
+true(r).
+true(6).
+goal(robot, 100).
+% =========!
+true(q).
+true(p).
+true(6).
+goal(robot, 100).
+% =========!
+true(5).
+goal(robot, 100).
+% =========!
+true(4).
+true(p).
+goal(robot, 100).
+% =========!
+true(q).
+true(4).
+true(p).
+goal(robot, 100).

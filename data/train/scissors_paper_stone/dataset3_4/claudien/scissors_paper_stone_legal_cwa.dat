@@ -1,0 +1,123 @@
+% === CORES ===
+legal(P, paper).
+legal(P, scissors).
+legal(P, stone).
+% === BACKGROUND ===
+succ1(0, 1).
+succ1(1, 2).
+succ1(2, 3).
+player(p1).
+player(p2).
+init_step(0).
+init_player(p1, 0).
+init_score(p2, 0).
+beats(paper, stone).
+beats(scissors, paper).
+beats(stone, scissors).
+draws(P) :- does(P, A), does(Q, A), distinct(P, Q).
+wins(P) :- does(P, A1), does(Q, A2), distinct(P, Q), beats(A1, A2).
+loses(P) :- does(P, A1), does(Q, A2), distinct(P, Q), beats(A2, A1).
+% === MODES ===
+\+player(+).
+% === TYPES === 
+true_score(agent,int).
+true_step(int).
+next_score(agent,int).
+next_step(int).
+legal(agent,action).
+input(agent,action).
+does(agent,action).
+goal(agent,int).
+player(agent).
+beats(action,action).
+succ1(int,int).
+% === CONSTANTS ===
+int(0).
+int(1).
+int(2).
+int(3).
+agent(p1).
+agent(p2).
+action(scissors).
+action(paper).
+action(stone).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,2).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+legal(p1,scissors).
+legal(p1,stone).
+legal(p2,paper).
+legal(p2,stone).
+legal(p2,scissors).
+legal(p1,paper).

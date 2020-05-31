@@ -1,0 +1,1453 @@
+% === CORES ===
+legal_say(player, N).
+% === BACKGROUND ===
+int(0).
+succ1(0, 1).
+succ1(1, 2).
+succ1(2, 3).
+succ1(3, 4).
+succ1(4, 5).
+succ1(5, 6).
+succ1(6, 7).
+succ1(7, 8).
+succ1(8, 9).
+succ1(9, 10).
+role(player).
+succ1(10, 11).
+succ1(11, 12).
+succ1(12, 13).
+succ1(13, 14).
+succ1(14, 15).
+succ1(15, 16).
+succ1(16, 17).
+succ1(17, 18).
+succ1(18, 19).
+succ1(19, 20).
+succ1(20, 21).
+succ1(21, 22).
+succ1(22, 23).
+succ1(23, 24).
+succ1(24, 25).
+succ1(25, 26).
+succ1(26, 27).
+succ1(27, 28).
+succ1(28, 29).
+succ1(29, 30).
+succ1(30, 31).
+init_count(1).
+init_success(0).
+input_say(player, fizz).
+input_say(player, buzz).
+input_say(player, fizzbuzz).
+special(fizz).
+special(buzz).
+special(fizzbuzz).
+minus(A, 1, B) :- succ1(B, A).
+int(A) :- succ1(B, A), int(B).
+less_than(A, B) :- succ1(A, B).
+base_count(N) :- positive_int(N).
+divisible(N, N) :- positive_int(N).
+positive_int(A) :- int(A), distinct(A, 0).
+base_success(N) :- int(N), distinct(N, 31).
+input_say(player, N) :- positive_int(N), distinct(N, 31).
+less_than(A, B) :- succ1(A, Bigger_a), less_than(Bigger_a, B).
+correct :- true_count(N), divisible(N, 15), does_say(player, fizzbuzz).
+correct :- true_count(N), divisible(N, 3), not(divisible(N, 5)), does_say(player, fizz).
+correct :- true_count(N), divisible(N, 5), not(divisible(N, 3)), does_say(player, buzz).
+correct :- true_count(N), not(divisible(N, 5)), not(divisible(N, 3)), does_say(player, N).
+minus(A, B, C) :- succ1(Smaller_a, A), succ1(Smaller_b, B), distinct(B, 1), minus(Smaller_a, Smaller_b, C).
+divisible(Divided, Divisor) :- less_than(Divisor, Divided), minus(Divided, Divisor, New_divided), divisible(New_divided, Divisor).
+% === MODES ===
+\+special(+).
+\+true_count(+).
+% === TYPES === 
+true(prop).
+next(prop).
+special(word).
+true_count(word).
+true_success(int).
+next_success(int).
+next_count(int).
+legal_say(agent,word).
+input_say(agent,word).
+does(agent,action).
+goal(agent,score).
+role(agent).
+divisible(int,int).
+less_than(int,int).
+succ1(int,int).
+minus(int,int,int).
+int(int).
+positive_int(int).
+% === CONSTANTS ===
+agent(player).
+score(0).
+score(25).
+score(50).
+score(75).
+score(100).
+int(1).
+int(2).
+int(3).
+int(4).
+int(5).
+int(6).
+int(7).
+int(8).
+int(9).
+int(10).
+int(11).
+int(12).
+int(13).
+int(14).
+int(15).
+int(16).
+int(17).
+int(18).
+int(19).
+int(20).
+int(21).
+int(22).
+int(23).
+int(24).
+int(26).
+int(27).
+int(28).
+int(29).
+int(30).
+int(31).
+word(1).
+word(2).
+word(3).
+word(4).
+word(5).
+word(6).
+word(7).
+word(8).
+word(9).
+word(10).
+word(11).
+word(12).
+word(13).
+word(14).
+word(15).
+word(16).
+word(17).
+word(18).
+word(19).
+word(20).
+word(21).
+word(22).
+word(23).
+word(24).
+word(26).
+word(27).
+word(28).
+word(29).
+word(30).
+word(31).
+word(fizz).
+word(buzz).
+word(fizzbuzz).
+% =========
+true_count(6).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,6).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(4).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,4).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(13).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(16).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,16).
+% =========
+true_count(13).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(15).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,15).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(15).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,15).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(17).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(27).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(16).
+true_success(14).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,16).
+% =========
+true_count(3).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,3).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(9).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(4).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,4).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(25).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(19).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(13).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(25).
+true_success(17).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(16).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,16).
+% =========
+true_count(13).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(26).
+true_success(23).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(28).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(8).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,8).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(17).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,17).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(19).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(14).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,14).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(28).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(24).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(28).
+true_success(21).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(13).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(6).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,6).
+legal_say(player,fizzbuzz).
+% =========
+true_count(11).
+true_success(10).
+legal_say(player,11).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,buzz).
+% =========
+true_count(28).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(18).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(25).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(11).
+true_success(2).
+legal_say(player,11).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,buzz).
+% =========
+true_count(1).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,1).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(12).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(21).
+true_success(9).
+legal_say(player,buzz).
+legal_say(player,21).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(23).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(8).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,8).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(6).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,6).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(28).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(29).
+true_success(13).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(14).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,14).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(12).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(5).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,5).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(16).
+true_success(9).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,16).
+% =========
+true_count(29).
+true_success(26).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(24).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(26).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(6).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,6).
+legal_say(player,fizzbuzz).
+% =========
+true_count(7).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,7).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(15).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,15).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(24).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(18).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(7).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,7).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(19).
+true_success(14).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(5).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,5).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(9).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,9).
+% =========
+true_count(21).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,21).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(21).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,21).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(11).
+true_success(9).
+legal_say(player,11).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,buzz).
+% =========
+true_count(24).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(7).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,7).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(13).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,13).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(26).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(18).
+true_success(17).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(21).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,21).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(19).
+true_success(9).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(18).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(25).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(26).
+true_success(13).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(29).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(29).
+true_success(14).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(10).
+true_success(9).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,10).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(22).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(8).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,8).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(26).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(19).
+true_success(13).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(28).
+true_success(25).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(16).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,16).
+% =========
+true_count(24).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(19).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(21).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,21).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(23).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(5).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,5).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(25).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(30).
+true_success(24).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(19).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(23).
+true_success(12).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(23).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,23).
+% =========
+true_count(18).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(10).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,10).
+legal_say(player,fizzbuzz).
+% =========
+true_count(22).
+true_success(20).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(25).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(13).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(12).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(12).
+true_success(10).
+legal_say(player,12).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,buzz).
+% =========
+true_count(19).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(17).
+true_success(13).
+legal_say(player,buzz).
+legal_say(player,17).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(10).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,10).
+legal_say(player,fizzbuzz).
+% =========
+true_count(25).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(26).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(22).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,22).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(19).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(29).
+true_success(19).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(12).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(26).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(25).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(7).
+true_success(3).
+legal_say(player,buzz).
+legal_say(player,7).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(24).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(9).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,9).
+% =========
+true_count(14).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,14).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(17).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,17).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(25).
+true_success(20).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).
+% =========
+true_count(9).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,9).
+% =========
+true_count(26).
+true_success(21).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,26).
+% =========
+true_count(17).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,17).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(27).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(14).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(29).
+true_success(20).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(18).
+true_success(16).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(8).
+true_success(4).
+legal_say(player,buzz).
+legal_say(player,8).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(2).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(30).
+true_success(21).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(9).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,9).
+% =========
+true_count(19).
+true_success(6).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(19).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(27).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(5).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(18).
+true_success(15).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(3).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,3).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(11).
+true_success(4).
+legal_say(player,11).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,buzz).
+% =========
+true_count(17).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,17).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(27).
+true_success(23).
+legal_say(player,buzz).
+legal_say(player,27).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(17).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(29).
+true_success(1).
+legal_say(player,buzz).
+legal_say(player,29).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(19).
+true_success(10).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,19).
+legal_say(player,fizzbuzz).
+% =========
+true_count(10).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,10).
+legal_say(player,fizzbuzz).
+% =========
+true_count(30).
+true_success(11).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(28).
+true_success(0).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(30).
+true_success(17).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,30).
+% =========
+true_count(24).
+true_success(18).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,24).
+legal_say(player,fizzbuzz).
+% =========
+true_count(20).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,20).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(15).
+true_success(14).
+legal_say(player,buzz).
+legal_say(player,15).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+% =========
+true_count(18).
+true_success(8).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,18).
+legal_say(player,fizzbuzz).
+% =========
+true_count(28).
+true_success(7).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,fizzbuzz).
+legal_say(player,28).
+% =========
+true_count(25).
+true_success(22).
+legal_say(player,buzz).
+legal_say(player,fizz).
+legal_say(player,25).
+legal_say(player,fizzbuzz).

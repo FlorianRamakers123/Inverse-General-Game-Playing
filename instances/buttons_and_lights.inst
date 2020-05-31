@@ -1,0 +1,44 @@
+true(p).
+true(q).
+true(r).
+true(1).
+true(2).
+true(3).
+true(4).
+true(5).
+true(6).
+true(7).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+legal(robot, a).
+legal(robot, b).
+legal(robot, c).
+does(robot, a).
+does(robot, b).
+does(robot, c).
+goal(robot, 0).
+goal(robot, 100).
+prop(p).
+prop(q).
+prop(r).
+prop(1).
+prop(2).
+prop(3).
+prop(4).
+prop(5).
+prop(6).
+prop(7).
+agent(robot).
+action(a).
+action(b).
+action(c).
+int(0).
+int(100).

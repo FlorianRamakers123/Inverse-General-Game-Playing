@@ -1,0 +1,1025 @@
+% === CORES ===
+next(Y).
+next(q).
+next(p).
+next(r).
+% === BACKGROUND ===
+base(p).
+base(q).
+base(r).
+base(1).
+base(2).
+base(3).
+base(4).
+base(5).
+base(6).
+base(7).
+init(1).
+role(robot).
+input(robot,a).
+input(robot,b).
+input(robot,c).
+successor(1,2).
+successor(2,3).
+successor(3,4).
+successor(4,5).
+successor(5,6).
+successor(6,7).
+legal_gdl(robot,a).
+legal_gdl(robot,b).
+legal_gdl(robot,c).
+not_true(A) :- \+true(A).
+% === MODES ===
+\+not_true(c).
+\+true(c).
+\+does(c,c).
+\+true(+).
+\+true(-).
+\+successor(+,+).
+% === TYPES === 
+not_true(prop).
+true(prop).
+next(prop).
+legal(agent,action).
+input(agent,action).
+does(agent,action).
+goal(agent,int).
+role(agent).
+successor(prop,prop).
+% === CONSTANTS ===
+prop(p).
+prop(q).
+prop(r).
+prop(1).
+prop(2).
+prop(3).
+prop(4).
+prop(5).
+prop(6).
+prop(7).
+agent(robot).
+action(a).
+action(b).
+action(c).
+int(0).
+int(100).
+% ==========
+does(robot, b).
+true(4).
+true(p).
+true(q).
+next(5).
+next(p).
+next(q).
+% ==========
+does(robot, c).
+true(6).
+true(q).
+next(7).
+next(r).
+% ==========
+does(robot, a).
+true(5).
+true(q).
+next(6).
+next(p).
+next(q).
+% ==========
+does(robot, b).
+true(6).
+next(7).
+% ==========
+does(robot, c).
+true(3).
+next(4).
+% ==========
+does(robot, c).
+true(5).
+true(r).
+next(6).
+next(q).
+% ==========
+does(robot, a).
+true(4).
+true(p).
+next(5).
+% ==========
+does(robot, c).
+true(6).
+true(p).
+true(q).
+next(7).
+next(p).
+next(r).
+% ==========
+does(robot, c).
+true(6).
+true(r).
+next(7).
+next(q).
+% ==========
+does(robot, c).
+true(6).
+true(p).
+true(r).
+next(7).
+next(p).
+next(q).
+% ==========
+does(robot, b).
+true(6).
+true(p).
+true(r).
+next(7).
+next(q).
+next(r).
+% ==========
+true(7).
+true(p).
+true(q).
+% ==========
+does(robot, b).
+true(5).
+true(p).
+next(6).
+next(q).
+% ==========
+does(robot, b).
+true(6).
+true(p).
+true(q).
+next(7).
+next(p).
+next(q).
+% ==========
+does(robot, b).
+true(5).
+true(p).
+true(r).
+next(6).
+next(q).
+next(r).
+% ==========
+does(robot, c).
+true(5).
+true(p).
+next(6).
+next(p).
+% ==========
+does(robot, c).
+true(5).
+true(p).
+true(q).
+next(6).
+next(p).
+next(r).
+% ==========
+does(robot, a).
+true(4).
+true(q).
+next(5).
+next(p).
+next(q).
+% ==========
+does(robot, c).
+true(3).
+true(q).
+next(4).
+next(r).
+% ==========
+does(robot, c).
+true(2).
+true(p).
+next(3).
+next(p).
+% ==========
+does(robot, a).
+true(5).
+true(p).
+true(q).
+next(6).
+next(q).
+% ==========
+does(robot, b).
+true(4).
+true(r).
+next(5).
+next(r).
+% ==========
+does(robot, b).
+true(3).
+true(p).
+next(4).
+next(q).
+% ==========
+does(robot, c).
+true(4).
+true(q).
+next(5).
+next(r).
+% ==========
+does(robot, b).
+true(6).
+true(q).
+next(7).
+next(p).
+% ==========
+true(7).
+true(q).
+% ==========
+does(robot, a).
+true(2).
+next(3).
+next(p).
+% ==========
+true(7).
+true(r).
+% ==========
+does(robot, b).
+true(3).
+true(q).
+next(4).
+next(p).
+% ==========
+does(robot, c).
+true(4).
+true(p).
+next(5).
+next(p).
+% ==========
+does(robot, a).
+true(3).
+true(q).
+next(4).
+next(p).
+next(q).
+% ==========
+does(robot, c).
+true(4).
+true(p).
+true(q).
+next(5).
+next(p).
+next(r).
+% ==========
+does(robot, b).
+true(6).
+true(r).
+next(7).
+next(r).
+% ==========
+does(robot, b).
+true(1).
+next(2).
+% ==========
+does(robot, a).
+true(5).
+true(p).
+true(r).
+next(6).
+next(r).
+% ==========
+does(robot, a).
+true(5).
+true(p).
+next(6).
+% ==========
+does(robot, a).
+true(3).
+true(p).
+next(4).
+% ==========
+does(robot, c).
+true(2).
+next(3).
+% ==========
+does(robot, b).
+true(4).
+true(q).
+next(5).
+next(p).
+% ==========
+does(robot, a).
+true(2).
+true(p).
+next(3).
+% ==========
+true(7).
+true(q).
+true(r).
+% ==========
+does(robot, a).
+true(6).
+true(p).
+true(r).
+next(7).
+next(r).
+% ==========
+does(robot, c).
+true(4).
+true(r).
+next(5).
+next(q).
+% ==========
+does(robot, a).
+true(4).
+next(5).
+next(p).
+% ==========
+true(7).
+true(p).
+true(r).
+% ==========
+does(robot, c).
+true(5).
+true(p).
+true(r).
+next(6).
+next(p).
+next(q).
+% ==========
+does(robot, a).
+true(6).
+true(p).
+true(q).
+next(7).
+next(q).
+% ==========
+does(robot, b).
+true(4).
+next(5).
+% ==========
+true(7).
+% ==========
+does(robot, c).
+true(6).
+true(p).
+next(7).
+next(p).
+% ==========
+does(robot, c).
+true(6).
+true(q).
+true(r).
+next(7).
+next(q).
+next(r).
+% ==========
+does(robot, b).
+true(6).
+true(p).
+next(7).
+next(q).
+% ==========
+does(robot, b).
+true(4).
+true(p).
+next(5).
+next(q).
+% =========!
+does(robot, b).
+true(4).
+true(p).
+true(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(6).
+true(q).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, a).
+true(5).
+true(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, b).
+true(6).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, c).
+true(3).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(5).
+true(r).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, a).
+true(4).
+true(p).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(6).
+true(p).
+true(q).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, c).
+true(6).
+true(r).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, c).
+true(6).
+true(p).
+true(r).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(6).
+true(p).
+true(r).
+next(p).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+true(7).
+true(p).
+true(q).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(5).
+true(p).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, b).
+true(6).
+true(p).
+true(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(5).
+true(p).
+true(r).
+next(p).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, c).
+true(5).
+true(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, c).
+true(5).
+true(p).
+true(q).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, a).
+true(4).
+true(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(3).
+true(q).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(2).
+true(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(5).
+true(p).
+true(q).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, b).
+true(4).
+true(r).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(3).
+true(p).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(4).
+true(q).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(6).
+true(q).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+true(7).
+true(q).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(2).
+next(q).
+next(r).
+next(1).
+next(2).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+true(7).
+true(r).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(3).
+true(q).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(4).
+true(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(3).
+true(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(4).
+true(p).
+true(q).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(6).
+true(r).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(1).
+next(p).
+next(q).
+next(r).
+next(1).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(5).
+true(p).
+true(r).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, a).
+true(5).
+true(p).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, a).
+true(3).
+true(p).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(2).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, b).
+true(4).
+true(q).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(2).
+true(p).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+true(7).
+true(q).
+true(r).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(6).
+true(p).
+true(r).
+next(p).
+next(q).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, c).
+true(4).
+true(r).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+does(robot, a).
+true(4).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+true(7).
+true(p).
+true(r).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(5).
+true(p).
+true(r).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(7).
+% =========!
+does(robot, a).
+true(6).
+true(p).
+true(q).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(4).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).
+% =========!
+true(7).
+next(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+next(7).
+% =========!
+does(robot, c).
+true(6).
+true(p).
+next(q).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, c).
+true(6).
+true(q).
+true(r).
+next(p).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(6).
+true(p).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(5).
+next(6).
+% =========!
+does(robot, b).
+true(4).
+true(p).
+next(p).
+next(r).
+next(1).
+next(2).
+next(3).
+next(4).
+next(6).
+next(7).

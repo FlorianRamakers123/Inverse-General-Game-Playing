@@ -1,0 +1,30 @@
+{
+  "Solver": "clingo version 5.3.0",
+  "Input": [
+    "results/specialised_ilasp/buttons_and_lights/legal.pl_test"
+  ],
+  "Call": [
+    {
+      "Witnesses": [
+        {
+          "Value": [
+            "action(a)", "action(b)", "action(c)", "agent(robot)", "legal(robot,a)", "legal(robot,b)", "legal(robot,c)", "input(robot,a)", "input(robot,b)", "input(robot,c)", "role(robot)", "successor(1,2)", "successor(2,3)", "successor(3,4)", "successor(4,5)", "successor(5,6)", "successor(6,7)", "true(7)", "true(p)", "true(r)", "prop(p)", "prop(q)", "prop(r)", "prop(1)", "prop(2)", "prop(3)", "prop(4)", "prop(5)", "prop(6)", "prop(7)", "int(0)", "int(100)"
+          ]
+        }
+      ]
+    }
+  ],
+  "Result": "SATISFIABLE",
+  "Models": {
+    "Number": 1,
+    "More": "no"
+  },
+  "Calls": 1,
+  "Time": {
+    "Total": 0.001,
+    "Solve": 0.000,
+    "Model": 0.000,
+    "Unsat": 0.000,
+    "CPU": 0.001
+  }
+}

@@ -1,0 +1,5 @@
+LEGAL=legal/2
+DOES=does/2
+NEXT=next_step/1;next_score/2
+INIT=init_step/1;init_score/2
+ROLE=player/1

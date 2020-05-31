@@ -1,0 +1,55 @@
+input(robot, a).
+input(robot, b).
+input(robot, c).
+role(robot).
+successor(1, 2).
+successor(2, 3).
+successor(3, 4).
+successor(4, 5).
+successor(5, 6).
+successor(6, 7).
+% example
+does(robot, b).
+true(5).
+true(q).
+% types
+prop(
+
+p).
+prop( q).
+prop( r).
+prop( 1).
+prop( 2).
+prop( 3).
+prop( 4).
+prop( 5).
+prop( 6).
+prop( 7).
+agent(
+
+robot).
+action(
+
+a).
+action( b).
+action( c).
+int(
+
+0).
+int( 100).
+% hypothesis
+
+
+
+next(V0) :- true(V12), does(V8, V9), V0 = r, V9 = c, V12 = q, prop(V0), agent(V8), action(V9), prop(V12).
+next(V0) :- successor(V1, V0), true(V1), prop(V0), prop(V1).
+next(V0) :- does(V8, V11), not true(V0), V0 = p, V11 = a, prop(V0), agent(V8), action(V11).
+next(V0) :- true(V12), does(V8, V9), V0 = q, V9 = c, V12 = r, prop(V0), agent(V8), action(V9), prop(V12).
+next(V0) :- true(V0), does(V8, V9), V0 = p, V9 = c, prop(V0), agent(V8), action(V9).
+next(V0) :- true(V0), does(V8, V10), V0 = r, V10 = b, prop(V0), agent(V8), action(V10).
+next(V0) :- true(V12), does(V8, V10), V0 = q, V10 = b, V12 = p, prop(V0), agent(V8), action(V10), prop(V12).
+next(V0) :- true(V0), does(V8, V11), V0 = q, V11 = a, prop(V0), agent(V8), action(V11).
+next(V0) :- true(V12), does(V8, V10), V0 = p, V10 = b, V12 = q, prop(V0), agent(V8), action(V10), prop(V12).
+next(V0) :- true(V0), does(V8, V11), V0 = r, V11 = a, prop(V0), agent(V8), action(V11).
+
+

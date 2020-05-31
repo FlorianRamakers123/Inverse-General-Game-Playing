@@ -1,0 +1,30 @@
+{
+  "Solver": "clingo version 5.3.0",
+  "Input": [
+    "results/specialised_ilasp/scissors_paper_stone/next_step.pl_test"
+  ],
+  "Call": [
+    {
+      "Witnesses": [
+        {
+          "Value": [
+            "int(0)", "int(1)", "int(2)", "int(3)", "true_step(1)", "succ(0,1)", "succ(1,2)", "succ(2,3)", "next_step(2)", "beats(paper,stone)", "beats(scissors,paper)", "beats(stone,scissors)", "player(p1)", "player(p2)", "does(p1,scissors)", "does(p2,stone)", "true_score(p1,1)", "true_score(p2,0)", "agent(p1)", "agent(p2)", "action(scissors)", "action(paper)", "action(stone)"
+          ]
+        }
+      ]
+    }
+  ],
+  "Result": "SATISFIABLE",
+  "Models": {
+    "Number": 1,
+    "More": "no"
+  },
+  "Calls": 1,
+  "Time": {
+    "Total": 0.001,
+    "Solve": 0.000,
+    "Model": 0.000,
+    "Unsat": 0.000,
+    "CPU": 0.000
+  }
+}

@@ -1,0 +1,24 @@
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+%%%
+p1:scissors
+p2:scissors
+---
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+%%%
+p1:scissors
+p2:scissors
+---
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+%%%
+p1:scissors
+p2:scissors
+---
+true_step(3).
+true_score(p1,0).
+true_score(p2,0).

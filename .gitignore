@@ -1,0 +1,8 @@
+*.pyc
+*.txt
+
+replay/pl_files/file.pl
+
+.vscode/
+
+

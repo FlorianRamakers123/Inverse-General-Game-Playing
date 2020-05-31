@@ -1,0 +1,209 @@
+true_count(1).
+true_count(2).
+true_count(3).
+true_count(4).
+true_count(5).
+true_count(6).
+true_count(7).
+true_count(8).
+true_count(9).
+true_count(10).
+true_count(11).
+true_count(12).
+true_count(13).
+true_count(14).
+true_count(15).
+true_count(16).
+true_count(17).
+true_count(18).
+true_count(19).
+true_count(20).
+true_count(21).
+true_count(22).
+true_count(23).
+true_count(24).
+true_count(25).
+true_count(26).
+true_count(27).
+true_count(28).
+true_count(29).
+true_count(30).
+true_count(31).
+true_success(1).
+true_success(2).
+true_success(3).
+true_success(4).
+true_success(5).
+true_success(6).
+true_success(7).
+true_success(8).
+true_success(9).
+true_success(10).
+true_success(11).
+true_success(12).
+true_success(13).
+true_success(14).
+true_success(15).
+true_success(16).
+true_success(17).
+true_success(18).
+true_success(19).
+true_success(20).
+true_success(21).
+true_success(22).
+true_success(23).
+true_success(24).
+true_success(25).
+true_success(26).
+true_success(27).
+true_success(28).
+true_success(29).
+true_success(30).
+true_success(31).
+next_count(1).
+next_count(2).
+next_count(3).
+next_count(4).
+next_count(5).
+next_count(6).
+next_count(7).
+next_count(8).
+next_count(9).
+next_count(10).
+next_count(11).
+next_count(12).
+next_count(13).
+next_count(14).
+next_count(15).
+next_count(16).
+next_count(17).
+next_count(18).
+next_count(19).
+next_count(20).
+next_count(21).
+next_count(22).
+next_count(23).
+next_count(24).
+next_count(25).
+next_count(26).
+next_count(27).
+next_count(28).
+next_count(29).
+next_count(30).
+next_count(31).
+next_success(1).
+next_success(2).
+next_success(3).
+next_success(4).
+next_success(5).
+next_success(6).
+next_success(7).
+next_success(8).
+next_success(9).
+next_success(10).
+next_success(11).
+next_success(12).
+next_success(13).
+next_success(14).
+next_success(15).
+next_success(16).
+next_success(17).
+next_success(18).
+next_success(19).
+next_success(20).
+next_success(21).
+next_success(22).
+next_success(23).
+next_success(24).
+next_success(25).
+next_success(26).
+next_success(27).
+next_success(28).
+next_success(29).
+next_success(30).
+next_success(31).
+legal_say(player, fizz).
+legal_say(player, buzz).
+legal_say(player, fizzbuzz).
+legal_say(player, 1).
+legal_say(player, 2).
+legal_say(player, 3).
+legal_say(player, 4).
+legal_say(player, 5).
+legal_say(player, 6).
+legal_say(player, 7).
+legal_say(player, 8).
+legal_say(player, 9).
+legal_say(player, 10).
+legal_say(player, 11).
+legal_say(player, 12).
+legal_say(player, 13).
+legal_say(player, 14).
+legal_say(player, 15).
+legal_say(player, 16).
+legal_say(player, 17).
+legal_say(player, 18).
+legal_say(player, 19).
+legal_say(player, 20).
+legal_say(player, 21).
+legal_say(player, 22).
+legal_say(player, 23).
+legal_say(player, 24).
+legal_say(player, 25).
+legal_say(player, 26).
+legal_say(player, 27).
+legal_say(player, 28).
+legal_say(player, 29).
+legal_say(player, 30).
+input_say(player, fizz).
+input_say(player, buzz).
+input_say(player, fizzbuzz).
+does_say(player, 1).
+does_say(player, 2).
+does_say(player, 3).
+does_say(player, 4).
+does_say(player, 5).
+does_say(player, 6).
+does_say(player, 7).
+does_say(player, 8).
+does_say(player, 9).
+does_say(player, 10).
+does_say(player, 11).
+does_say(player, 12).
+does_say(player, 13).
+does_say(player, 14).
+does_say(player, 15).
+does_say(player, 16).
+does_say(player, 17).
+does_say(player, 18).
+does_say(player, 19).
+does_say(player, 20).
+does_say(player, 21).
+does_say(player, 22).
+does_say(player, 23).
+does_say(player, 24).
+does_say(player, 25).
+does_say(player, 26).
+does_say(player, 27).
+does_say(player, 28).
+does_say(player, 29).
+does_say(player, 30).
+does_say(player, fizz).
+does_say(player, buzz).
+does_say(player, fizzbuzz).
+goal(player, 0).
+goal(player, 25).
+goal(player, 50).
+goal(player, 75).
+goal(player, 100).
+agent(player).
+score(0).
+score(25).
+score(50).
+score(75).
+score(100).
+int(X) :- score(X).
+word(X) :- int(X).
+word(fizz).
+word(buzz).
+word(fizzbuzz).

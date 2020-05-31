@@ -1,0 +1,14 @@
+atoms:
+	terminal()
+
+---
+
+statics:
+	beats(paper, stone)
+	beats(scissors, paper)
+	beats(stone, scissors)
+	player(p1)
+	player(p2)
+	succ(0, 1)
+	succ(1, 2)
+	succ(2, 3)

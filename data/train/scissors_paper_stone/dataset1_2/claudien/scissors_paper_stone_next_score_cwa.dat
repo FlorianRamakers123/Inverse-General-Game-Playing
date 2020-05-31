@@ -1,0 +1,819 @@
+% === CORES ===
+next_score(p1, N).
+next_score(p2, N).
+% === BACKGROUND ===
+succ1(0, 1).
+succ1(1, 2).
+succ1(2, 3).
+player(p1).
+player(p2).
+init_step(0).
+init_score(p1, 0).
+init_score(p2, 0).
+beats(paper, stone).
+beats(scissors, paper).
+beats(stone, scissors).
+draws(P) :- does(P, A), does(Q, A), distinct(P, Q).
+wins(P) :- does(P, A1), does(Q, A2), distinct(P, Q), beats(A1, A2).
+loses(P) :- does(P, A1), does(Q, A2), distinct(P, Q), beats(A2, A1).
+distinct(p1,p2).
+% === MODES ===
+\+true_score(c,-).
+\+true_score(c,+).
+%\+draws(c).
+%\+loses(c).
+%\+wins(c).
+\+succ1(-,+).
+\+succ1(+,+).
+\+does(+,-).
+\+does(+,+).
+\+does(-,-).
+\+does(-,+).
+\+distinct(+,-).
+\+distinct(+,+).
+\+beats(+,+).
+\+beats(+,-).
+\+beats(-,+).
+\+beats(-,-).
+% === TYPES ===
+draws(agent).
+wins(agent).
+loses(agent).
+true_score(agent,int).
+true_step(int).
+next_score(agent,int).
+next_step(int).
+legal(agent,action).
+input(agent,action).
+does(agent,action).
+goal(agent,int).
+player(agent).
+distinct(agent,agent).
+beats(action,action).
+succ1(int,int).
+% === CONSTANTS ===
+int(0).
+int(1).
+int(2).
+int(3).
+agent(p1).
+agent(p2).
+action(scissors).
+action(paper).
+action(stone).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,paper).
+next_step(3).
+next_score(p1,0).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,paper).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,paper).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,2).
+does(p1,scissors).
+does(p2,paper).
+next_step(3).
+next_score(p1,1).
+next_score(p2,2).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,stone).
+does(p2,stone).
+next_step(3).
+next_score(p1,2).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,scissors).
+does(p2,paper).
+next_step(1).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,paper).
+next_step(2).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,paper).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,paper).
+does(p2,paper).
+next_step(3).
+next_score(p1,0).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_step(3).
+next_score(p1,2).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_step(3).
+next_score(p1,0).
+next_score(p2,2).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,paper).
+does(p2,paper).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,paper).
+does(p2,stone).
+next_step(3).
+next_score(p1,3).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,2).
+does(p1,stone).
+does(p2,paper).
+next_step(3).
+next_score(p1,0).
+next_score(p2,3).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,2).
+% =========
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,paper).
+does(p2,scissors).
+next_step(1).
+next_score(p1,0).
+next_score(p2,1).
+% =========
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,stone).
+does(p2,scissors).
+next_step(1).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,stone).
+next_step(2).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,paper).
+next_step(3).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,scissors).
+next_step(2).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,scissors).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,stone).
+does(p2,paper).
+next_step(1).
+next_score(p1,0).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,paper).
+next_step(3).
+next_score(p1,3).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,scissors).
+next_step(2).
+next_score(p1,0).
+next_score(p2,2).
+% =========
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_step(2).
+next_score(p1,2).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_step(3).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_step(2).
+next_score(p1,0).
+next_score(p2,2).
+% =========
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_step(2).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_step(3).
+next_score(p1,3).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,stone).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_step(3).
+next_score(p1,2).
+next_score(p2,0).
+% =========
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_step(2).
+next_score(p1,0).
+next_score(p2,0).
+% =========
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,stone).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,stone).
+does(p2,scissors).
+next_step(3).
+next_score(p1,1).
+next_score(p2,1).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,paper).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,paper).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,2).
+does(p1,scissors).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,stone).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,scissors).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,paper).
+does(p2,paper).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,paper).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,paper).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,2).
+does(p1,stone).
+does(p2,paper).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 2).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 3).
+% =========!
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,paper).
+does(p2,scissors).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,stone).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,paper).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(0).
+true_score(p1, 0).
+true_score(p2, 0).
+does(p1,stone).
+does(p2,paper).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,paper).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,paper).
+does(p2,scissors).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,scissors).
+does(p2,stone).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 1).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,2).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,1).
+does(p1,stone).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,stone).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 1).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(1).
+true_score(p1,0).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,scissors).
+next_score(p1, 1).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 1).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,1).
+true_score(p2,0).
+does(p1,scissors).
+does(p2,stone).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).
+% =========!
+true_step(2).
+true_score(p1,0).
+true_score(p2,1).
+does(p1,stone).
+does(p2,scissors).
+next_score(p1, 0).
+next_score(p1, 2).
+next_score(p1, 3).
+next_score(p2, 0).
+next_score(p2, 2).
+next_score(p2, 3).

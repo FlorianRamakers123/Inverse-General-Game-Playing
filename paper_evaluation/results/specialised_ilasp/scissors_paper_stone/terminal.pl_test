@@ -1,0 +1,35 @@
+beats(paper, stone).
+beats(scissors, paper).
+beats(stone, scissors).
+player(p1).
+player(p2).
+succ(0, 1).
+succ(1, 2).
+succ(2, 3).
+% example
+true_score(p1, 3).
+true_score(p2, 0).
+true_step(3).
+% types
+int(
+
+0).
+int( 1).
+int( 2).
+int( 3).
+agent(
+
+p1).
+agent( p2).
+action(
+
+scissors).
+action( paper).
+action( stone).
+% hypothesis
+
+
+
+terminal :- true_step(V1), V1 = 3, int(V1).
+
+
